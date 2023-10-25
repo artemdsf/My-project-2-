@@ -1,7 +1,6 @@
-using System.Diagnostics;
 using UnityEngine;
 
-public class EnemyMovementScript : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
 	[SerializeField] private float _moveSpeed = 5.0f;
 
