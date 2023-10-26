@@ -4,7 +4,7 @@ public class EnemySpawner : MonoBehaviour
 {
 	[SerializeField] private Transform[] _spawnPoints;
 	[SerializeField] private EnemyMovement _enemyPrefab;
-	[SerializeField] private Vector3 _direction;
+	[SerializeField] private Transform _target;
 	[SerializeField] private float _spawnInterval = 2.0f;
 
 	private float _spawnTimer = 0.0f;
@@ -27,6 +27,6 @@ public class EnemySpawner : MonoBehaviour
 
 		EnemyMovement newEnemy = Instantiate(_enemyPrefab, spawnPoint.position, spawnPoint.rotation);
 
-		newEnemy.SetDirection(_direction);
+		newEnemy.SetTarget(_target);
 	}
 }

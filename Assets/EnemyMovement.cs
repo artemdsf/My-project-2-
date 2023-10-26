@@ -4,15 +4,16 @@ public class EnemyMovement : MonoBehaviour
 {
 	[SerializeField] private float _moveSpeed = 5.0f;
 
-	private Vector3 _moveDirection;
+	private Transform _target;
 
-	public void SetDirection(Vector3 direction)
+	public void SetTarget(Transform target)
 	{
-		_moveDirection = direction.normalized;
+		_target = target;
 	}
 
 	private void Update()
 	{
-		transform.Translate(_moveSpeed * Time.deltaTime * _moveDirection);
+		Vector3 direction = (_target.position - transform.position).normalized;
+		transform.Translate(_moveSpeed * Time.deltaTime * direction);
 	}
 }
